@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="mb-6">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Username</label>
+    <input type="text" formControlName="userName"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="jhon.doe" required>
+  </div>
+  <div class="mb-6">
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
+    <input type="password" formControlName="password"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      required>
+  </div>
+  <button type="submit" [disabled]="form.invalid"
+    class="px-8 py-3 text-white rounded focus:outline-none" [ngClass]="form.invalid? 'bg-blue-300' : 'bg-blue-800' ">Save</button>
+</form>

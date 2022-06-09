@@ -1,0 +1,40 @@
+<table class="min-w-full">
+  <thead class="border-b">
+    <tr>
+      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+        Project Name
+      </th>
+      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+        Status
+      </th>
+      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+        Source Language
+      </th>
+      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+        Target Languages
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b" *ngFor="let project of projects?.content">
+      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+        {{ project.name }}
+      </td>
+      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+        {{ project.status }}
+      </td>
+      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+        <span class="px-4 py-2 rounded-full text-white bg-blue-500 font-semibold text-sm flex align-center w-max">
+          {{ project.sourceLang }}
+        </span>
+      </td>
+      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-wrap space-x-2">
+        <span *ngFor="let lang of project.targetLangs"
+          class="px-4 py-2 rounded-full text-white bg-blue-500 font-semibold text-sm flex align-center w-max">
+          {{lang}}
+        </span>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
